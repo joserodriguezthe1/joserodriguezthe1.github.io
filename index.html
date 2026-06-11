@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Rodriguez — Senior Cybersecurity & GRC Engineer</title>
+  <meta name="description"
+    content="Senior Cybersecurity / ISSO | RMF & GRC Engineering | CISSP · CISM · CGE-P | TS Clearance (Eligible for Reactivation) | USMC Veteran">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* ─── VIBRANT MASCULINE PALETTE ─── */
+      --bg: #060a12;
+      --bg2: #0a1220;
+      --bg3: #0f1a2e;
+      --surface: #142238;
+      --surface2: #1a2d4a;
+      --border: rgba(56, 189, 248, 0.14);
+      --border-strong: rgba(56, 189, 248, 0.34);
+
+      /* Accent system: electric blue → cyan → emerald */
+      --blue: #3b82f6;
+      --blue-bright: #60a5fa;
+      --cyan: #06b6d4;
+      --cyan-bright: #22d3ee;
+      --emerald: #10b981;
+      --lime: #84cc16;
+
+      --accent: #38bdf8;
+      --accent-bright: #7dd3fc;
+      --accent-dim: rgba(56, 189, 248, 0.10);
+      --accent-mid: rgba(56, 189, 248, 0.22);
+
+      --grad: linear-gradient(135deg, #3b82f6 0%, #06b6d4 55%, #10b981 100%);
+      --grad-2: linear-gradient(135deg, #3b82f6, #22d3ee);
+      --grad-warm: linear-gradient(135deg, #06b6d4, #10b981);
+
+      --text: #e6f0ff;
+      --text2: #94a8c4;
+      --text3: #5a6b85;
+
+      --mono: 'JetBrains Mono', monospace;
+      --display: 'Space Grotesk', sans-serif;
+      --body: 'Inter', sans-serif;
+
+      --radius: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ─── ANIMATED AURORA BACKGROUND ─── */
+    .aurora {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .aurora::before,
+    .aurora::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.45;
+      animation: float 22s ease-in-out infinite;
+    }
+
+    .aurora::before {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+      top: -200px;
+      left: -150px;
+    }
+
+    .aurora::after {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+      top: 30%;
+      right: -250px;
+      animation-delay: -11s;
+      opacity: 0.35;
+    }
+
+    .aurora-blob-3 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #10b981 0%, transparent 70%);
+      filter: blur(120px);
+      opacity: 0.22;
+      bottom: 10%;
+      left: 30%;
+      animation: float 28s ease-in-out infinite -7s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(80px, -60px) scale(1.08);
+      }
+
+      66% {
+        transform: translate(-50px, 50px) scale(0.95);
+      }
+    }
+
+    /* Subtle grid */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 189, 248, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 8px 8px 8px 20px;
+      height: 56px;
+      background: rgba(17, 10, 31, 0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+      padding-right: 1rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .nav-logo span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text2);
+      text-decoration: none;
+      letter-spacing: -0.1px;
+      padding: 8px 14px;
+      border-radius: 100px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--accent-dim);
+    }
+
+    .nav-badge {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px !important;
+      background: var(--grad) !important;
+      color: #060a12 !important;
+      letter-spacing: -0.1px;
+      border-radius: 100px;
+    }
+
+    .nav-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+    }
+
+    .nav-hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 100px;
+      position: relative;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--accent-bright);
+      font-weight: 500;
+      margin-bottom: 1.6rem;
+      padding: 6px 14px 6px 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+    }
+
+    .hero-label .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 12px var(--emerald);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(0.85);
+      }
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 .accent {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: shift 8s ease-in-out infinite;
+    }
+
+    @keyframes shift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .hero-tagline {
+      font-size: 17px;
+      color: var(--text2);
+      line-height: 1.6;
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-tagline strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      font-family: var(--body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: -0.1px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--grad);
+      color: #060a12;
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-outline {
+      background: rgba(56, 189, 248, 0.06);
+      color: var(--text);
+      border-color: var(--border-strong);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ─── HERO STATS ─── */
+    .hero-stats-card {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(6, 182, 212, 0.04));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-stats-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--cyan), transparent);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      padding: 1rem 0;
+    }
+
+    .stat-num {
+      font-family: var(--display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text2);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .clearance-tag {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+      padding: 14px 16px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6ee7b7;
+    }
+
+    .clearance-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 12px var(--emerald);
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-bright);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--grad);
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: var(--text);
+    }
+
+    h2 .accent {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 120px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-meta {
+      margin-top: 2rem;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.06), rgba(6, 182, 212, 0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+
+    .meta-key {
+      font-family: var(--mono);
+      color: var(--text3);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .meta-val {
+      color: var(--text);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .meta-val.highlight {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .about-text .gradient-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    /* ─── SKILLS ─── */
+    #skills {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .skill-col {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.05), transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-col::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      background: var(--grad);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .skill-col:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), transparent);
+    }
+
+    .skill-col:hover::before {
+      opacity: 0.6;
+    }
+
+    .skill-col-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.3px;
+    }
+
+    .skill-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-bright);
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-list li {
+      font-size: 13px;
+      color: var(--text2);
+      padding-left: 18px;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .skill-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--grad);
+      opacity: 0.8;
+    }
+
+    .skill-col:hover .skill-list li {
+      color: var(--text);
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    #certifications {
+      padding: 120px 0;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .cert-card {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(6, 182, 212, 0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(6, 182, 212, 0.05));
+    }
+
+    .cert-card:hover::after {
+      opacity: 1;
+    }
+
+    .cert-org {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent-bright);
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .cert-name {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+      flex: 1;
+    }
+
+    .cert-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+    }
+
+    .cert-id {
+      color: var(--text3);
+      font-family: var(--mono);
+    }
+
+    .cert-verify {
+      color: var(--accent-bright);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 500;
+    }
+
+    .cert-verify svg {
+      width: 11px;
+      height: 11px;
+    }
+
+    /* ─── PROJECTS ─── */
+    #projects {
+      padding: 120px 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.04), transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.07), transparent);
+    }
+
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(16, 185, 129, 0.05), rgba(6, 182, 212, 0.05));
+      border-color: var(--border-strong);
+    }
+
+    .project-card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--grad);
+    }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent-bright);
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .featured-badge {
+      padding: 3px 10px;
+      background: var(--grad);
+      color: #060a12;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .project-card h3 {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card.featured h3 {
+      font-size: 28px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-card strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent-bright);
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 100px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-strong);
+      transition: all 0.2s;
+    }
+
+    .project-link:hover {
+      background: var(--accent-dim);
+      color: var(--accent-bright);
+      transform: translateY(-1px);
+    }
+
+    .project-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .control-box {
+      background: rgba(10, 6, 18, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .control-box-title {
+      color: var(--cyan);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .control-box div:not(.control-box-title) {
+      color: var(--text2);
+      padding-left: 4px;
+    }
+
+    .control-box .check {
+      color: var(--emerald);
+      margin-right: 6px;
+    }
+
+    /* ─── EXPERIENCE ─── */
+    #experience {
+      padding: 120px 0;
+    }
+
+    .exp-timeline {
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--cyan), transparent);
+      opacity: 0.5;
+    }
+
+    .exp-item {
+      position: relative;
+      padding-left: 3rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+    }
+
+    .exp-item.current::before {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25), 0 0 20px var(--accent);
+    }
+
+    .exp-card {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.04), transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .exp-card:hover {
+      border-color: var(--border-strong);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.07), transparent);
+      transform: translateX(4px);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-role {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+    }
+
+    .exp-org {
+      font-size: 13px;
+      color: var(--accent-bright);
+      font-weight: 500;
+    }
+
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      letter-spacing: 0.3px;
+      padding: 5px 10px;
+      background: var(--accent-dim);
+      border-radius: 100px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .exp-bullets li {
+      font-size: 13.5px;
+      color: var(--text2);
+      line-height: 1.65;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--grad);
+    }
+
+    /* ─── FOCUS ─── */
+    #focus {
+      padding: 120px 0;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .focus-card {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.05), transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .focus-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+    }
+
+    .focus-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: #060a12;
+    }
+
+    .focus-card h3 {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .focus-card p {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(16, 185, 129, 0.05), rgba(6, 182, 212, 0.05));
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--grad);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: rgba(10, 6, 18, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.25s;
+      color: var(--text);
+    }
+
+    .contact-link:hover {
+      border-color: var(--border-strong);
+      background: rgba(56, 189, 248, 0.08);
+      transform: translateX(4px);
+    }
+
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-bright);
+      flex-shrink: 0;
+    }
+
+    .contact-link-body {
+      flex: 1;
+    }
+
+    .contact-link-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    .contact-link-val {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-link-arrow {
+      color: var(--text3);
+      font-size: 20px;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      color: var(--accent-bright);
+      transform: translateX(3px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 12px;
+      color: var(--text3);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a {
+      color: var(--text3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--accent-bright);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.32s;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 920px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        left: 12px;
+        right: 12px;
+        transform: none;
+        padding: 8px 8px 8px 16px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 10, 31, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1rem;
+        gap: 4px;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-sidebar {
+        position: static;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .container {
+        padding: 0 1.25rem;
+      }
+
+      #hero {
+        padding: 120px 0 60px;
+      }
+
+      .exp-header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── ANIMATED BACKGROUND ─── -->
+  <div class="aurora">
+    <div class="aurora-blob-3"></div>
+  </div>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a href="#hero" class="nav-logo">JR<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="mailto:jarodriguez1836@gmail.com" class="nav-badge">Hire Me</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-label">
+            <span class="pulse"></span>
+            Senior Cybersecurity · GRC Engineering
+          </div>
+          <h1>Jose<br><span class="accent">Rodriguez</span></h1>
+          <p class="hero-tagline">
+            <strong>Senior Cybersecurity / ISSO</strong> and USMC veteran with 9+ years securing DoD and federal systems
+            —
+            from full RMF lifecycle execution in eMASS to compliance-as-code engineering on AWS.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              View Projects
+            </a>
+            <a href="#certifications" class="btn btn-outline">Certifications</a>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-stats-card">
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-num">9+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">8</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">18+</div>
+                <div class="stat-label">Team Supervised</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">∞</div>
+                <div class="stat-label">ATO Approvals</div>
+              </div>
+              <div class="clearance-tag">
+                <div class="clearance-dot"></div>
+                Top Secret — Eligible for Reactivation
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-sidebar reveal">
+          <div class="section-header" style="margin-bottom:0;">
+            <div class="section-eyebrow">Profile</div>
+            <h2>About<br><span class="accent">Me</span></h2>
+          </div>
+          <div class="about-meta">
+            <div class="meta-row">
+              <span class="meta-key">Status</span>
+              <span class="meta-val highlight">Open to Opportunities</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Location</span>
+              <span class="meta-val">Sanford, FL 32771</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Clearance</span>
+              <span class="meta-val highlight">Top Secret — Eligible for Reactivation</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Education</span>
+              <span class="meta-val">B.S. IT & Security — Campbell University</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Military</span>
+              <span class="meta-val">U.S. Marine Corps Veteran</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal reveal-delay-2">
+          <p>I'm a <strong>Senior Cybersecurity / ISSO professional</strong> and bilingual U.S. Marine Corps veteran
+            with
+            over 9 years of hands-on experience securing <strong>mission-critical DoD, federal civilian, and
+              healthcare systems</strong> from threat assessment through authorization.</p>
+          <p>My specialty is the <span class="gradient-text">full RMF lifecycle in eMASS</span> — I've led control
+            selection through ATO and continuous monitoring across Army, Navy, and federal civilian environments,
+            achieving consecutive Authorization to Operate approvals on mission-critical systems.</p>
+          <p>What makes me different: I don't just execute compliance checklists — I <strong>build GRC as
+              code</strong>. My portfolio implements NIST 800-53 controls as Terraform, AWS infrastructure, and
+            machine-readable OSCAL — bridging traditional GRC documentation with modern DevSecOps engineering.</p>
+          <p>Most recently, I supervised <strong>a team of 18+ ISSOs, Security Control Assessors, and Information
+              Security Managers</strong> delivering consecutive ATO approvals — operating with the precision of a
+            technical analyst and the leadership of a senior advisor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ─── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Capabilities</div>
+        <h2>Core <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-col reveal">
+          <div class="skill-col-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            Cloud & Infrastructure
+          </div>
+          <ul class="skill-list">
+            <li>AWS (EC2, S3, IAM, Lambda)</li>
+            <li>AWS Bedrock & EventBridge</li>
+            <li>AWS Security Hub</li>
+            <li>Terraform & CloudFormation</li>
+            <li>Checkov Policy-as-Code</li>
+            <li>Docker & GitHub Actions CI/CD</li>
+            <li>Windows Server & Active Directory</li>
+            <li>Linux Administration</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal reveal-delay-1">
+          <div class="skill-col-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            Frameworks & Compliance
+          </div>
+          <ul class="skill-list">
+            <li>RMF (NIST 800-37)</li>
+            <li>NIST 800-53 Rev 4 & 5</li>
+            <li>NIST 800-171</li>
+            <li>FISMA & FedRAMP</li>
+            <li>CNSSI 1253</li>
+            <li>DISA STIG / SRG</li>
+            <li>OSCAL 1.1.2</li>
+            <li>SSP / POA&M / SAR / RAR</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal reveal-delay-2">
+          <div class="skill-col-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            GRC & Security Tools
+          </div>
+          <ul class="skill-list">
+            <li>eMASS / eMASSter</li>
+            <li>ACAS / Tenable Nessus</li>
+            <li>SCAP Compliance Checker</li>
+            <li>STIG Viewer / Evaluate-STIG</li>
+            <li>Vulnerator</li>
+            <li>HBSS / VRAM</li>
+            <li>Continuous Monitoring</li>
+            <li>FISMA Reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CERTIFICATIONS ─── -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Credentials</div>
+        <h2><span class="accent">Certifications</span></h2>
+      </div>
+      <div class="cert-grid">
+        <a href="https://cert.grcengclub.com/verify/cgep-d97f8970-af85-487b-b655-6421320161a5" target="_blank"
+          rel="noopener" class="cert-card reveal">
+          <div class="cert-org">GRC Engineering Club</div>
+          <div class="cert-name">Certified GRC Engineer — Practitioner (CGE-P)</div>
+          <div class="cert-footer">
+            <span class="cert-id">Issued May 2026</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/42d465fe-3c72-47a5-a1ad-4627878a3f53/public_url" target="_blank"
+          rel="noopener" class="cert-card reveal reveal-delay-1">
+          <div class="cert-org">ISC²</div>
+          <div class="cert-name">Certified Information Systems Security Professional (CISSP)</div>
+          <div class="cert-footer">
+            <span class="cert-id">ID #921058</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/31f9a72b-d3f8-4db2-ba15-3b14b842ee9a?source=linked_in_profile"
+          target="_blank" rel="noopener" class="cert-card reveal reveal-delay-2">
+          <div class="cert-org">ISACA</div>
+          <div class="cert-name">Certified Information Security Manager (CISM)</div>
+          <div class="cert-footer">
+            <span class="cert-id">ID #221843622</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/8c8dc631-0f00-4e77-95e2-359a6f87c1a8/linked_in_profile" target="_blank"
+          rel="noopener" class="cert-card reveal reveal-delay-3">
+          <div class="cert-org">Amazon Web Services</div>
+          <div class="cert-name">AWS Certified Cloud Practitioner</div>
+          <div class="cert-footer">
+            <span class="cert-id">AWS Certified</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/c39f3ce0-9443-4f78-b936-0a9f867ed8b6/linked_in_profile" target="_blank"
+          rel="noopener" class="cert-card reveal">
+          <div class="cert-org">Amazon Web Services</div>
+          <div class="cert-name">AWS Certified AI Practitioner</div>
+          <div class="cert-footer">
+            <span class="cert-id">AWS Certified</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/2df1aa34-e49e-4d90-8e83-4666cfc82e9c/linked_in_profile" target="_blank"
+          rel="noopener" class="cert-card reveal reveal-delay-1">
+          <div class="cert-org">Amazon Web Services</div>
+          <div class="cert-name">AWS Cloud Quest: Generative AI Practitioner</div>
+          <div class="cert-footer">
+            <span class="cert-id">Training Badge</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/d7e7b3e2-7566-4454-8e6a-fb7de412eb42/linked_in_profile" target="_blank"
+          rel="noopener" class="cert-card reveal reveal-delay-2">
+          <div class="cert-org">CompTIA</div>
+          <div class="cert-name">CompTIA Security+ Certification</div>
+          <div class="cert-footer">
+            <span class="cert-id">CompTIA Certified</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/b06383a4-fc81-417c-a230-acc83ba2d414?source=linked_in_profile"
+          target="_blank" rel="noopener" class="cert-card reveal reveal-delay-3">
+          <div class="cert-org">Microsoft</div>
+          <div class="cert-name">MTA 98-349 Windows OS Fundamentals</div>
+          <div class="cert-footer">
+            <span class="cert-id">Microsoft Certified</span>
+            <span class="cert-verify">Verify
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">GRC Engineering Portfolio</div>
+        <h2>Project <span class="accent">Highlights</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- FEATURED: MedVault -->
+        <div class="project-card featured reveal">
+          <div>
+            <div class="project-num">01 <span class="featured-badge">Featured</span></div>
+            <h3>MedVault — OSCAL-Driven Continuous ATO Pipeline</h3>
+            <p>End-to-end <strong>NIST RMF execution for a FedRAMP Moderate cloud-native federal SaaS system</strong>.
+              Terraform + Checkov policy-as-code, CI pipeline emitting machine-readable <strong>OSCAL Assessment
+                Results</strong>, full OSCAL document family (Profile, Component Definitions, SSP with 13 control
+              implementations), POA&M tracking, continuous monitoring dashboard, Trivy scanning, Cosign image signing,
+              and CycloneDX SBOMs.</p>
+            <div class="project-tags">
+              <span class="tag">OSCAL 1.1.2</span>
+              <span class="tag">FedRAMP Moderate</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Checkov</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Trivy + Cosign</span>
+              <span class="tag">CycloneDX SBOM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/joserodriguezthe1/medvault-ato" class="project-link" target="_blank"
+                rel="noopener">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="control-box">
+              <div class="control-box-title">// OSCAL ARTIFACTS DELIVERED</div>
+              <div><span class="check">✓</span>Profile (FedRAMP Moderate)</div>
+              <div><span class="check">✓</span>Component Definitions</div>
+              <div><span class="check">✓</span>SSP — 13 controls implemented</div>
+              <div><span class="check">✓</span>Machine-readable Assessment Results</div>
+              <div><span class="check">✓</span>POA&M Tracking</div>
+              <div><span class="check">✓</span>ConMon Dashboard</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OffboardIQ -->
+        <div class="project-card reveal">
+          <div class="project-num">02</div>
+          <h3>OffboardIQ — AI-Powered RMF Offboarding Agent</h3>
+          <p>An <strong>AWS Bedrock agent (Claude Haiku 4.5)</strong> automating full IAM employee offboarding in under
+            60 seconds via 4 Lambda action groups. Implements NIST SP 800-53 controls <strong>AC-2, AC-3, AC-6, PS-4,
+              IA-4, AU-2/9/11/12, IR-6, SC-28, SI-12</strong> with S3 evidence archival and DynamoDB audit logging.
+            Solves orphaned-account audit findings in seconds, not weeks.</p>
+          <div class="project-tags">
+            <span class="tag">AWS Bedrock</span>
+            <span class="tag">Claude Haiku 4.5</span>
+            <span class="tag">NIST 800-53</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">DynamoDB</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/offboardiq" class="project-link" target="_blank"
+              rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+        <!-- NIST RMF Automated POAM -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-num">03</div>
+          <h3>NIST RMF Automated POA&M System</h3>
+          <p>AWS-native automated POA&M pipeline using <strong>Security Hub + GuardDuty + EventBridge + Lambda +
+              DynamoDB</strong>. Maps findings to NIST 800-53 control families with risk-based milestone scheduling
+            (HIGH 30 / MED 90 / LOW 180 days). Implements <strong>CA-7 continuous monitoring</strong> with REST API
+            and dashboard — directly addressing the most common ATO bottleneck.</p>
+          <div class="project-tags">
+            <span class="tag">Security Hub</span>
+            <span class="tag">GuardDuty</span>
+            <span class="tag">EventBridge</span>
+            <span class="tag">CA-7 ConMon</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/nist-rmf-automated-poam-system" class="project-link"
+              target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+        <!-- GRC Infrastructure as Code on AWS -->
+        <div class="project-card reveal">
+          <div class="project-num">04</div>
+          <h3>GRC Infrastructure as Code — AWS</h3>
+          <p>Secure AWS EC2 deployment using CloudFormation with embedded GRC controls. Demonstrates
+            <strong>compliance-as-code</strong> — infrastructure provisioned with security guardrails,
+            least-privilege IAM policies, and audit logging baked in from day one.
+          </p>
+          <div class="project-tags">
+            <span class="tag">CloudFormation</span>
+            <span class="tag">EC2</span>
+            <span class="tag">IaC</span>
+            <span class="tag">IAM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/grc-infrastructure-as-code-aws" class="project-link"
+              target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+        <!-- RMF System Tracker -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-num">05</div>
+          <h3>RMF System Tracker</h3>
+          <p>A JavaScript-based tracker for managing systems through the NIST Risk Management Framework lifecycle.
+            Tracks authorization status, control implementation states, and assessment milestones across multiple
+            systems — bringing visibility to what's usually a manual, spreadsheet-driven process.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">NIST 800-37</span>
+            <span class="tag">ATO Tracking</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/RMF-System-Tracker" class="project-link" target="_blank"
+              rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+        <!-- GRC AWS EC2 Monitor -->
+        <div class="project-card reveal">
+          <div class="project-num">06</div>
+          <h3>GRC AWS EC2 Monitor</h3>
+          <p>Python-based monitoring tool targeting AWS EC2 environments for GRC compliance visibility. Surfaces
+            configuration states and security posture data relevant to continuous monitoring requirements under RMF —
+            bridging cloud infrastructure and compliance reporting.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">AWS EC2</span>
+            <span class="tag">ConMon</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/grc-aws-ac2-monitor" class="project-link" target="_blank"
+              rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+        <!-- AI Security Training -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-num">07</div>
+          <h3>AI Security Training Platform</h3>
+          <p>Interactive JavaScript-based platform for cybersecurity awareness and security training. Reflects
+            security awareness program development work from real-world DoD healthcare environments — translating
+            enterprise training program design into a deployable web tool.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Security Awareness</span>
+            <span class="tag">AI-Assisted</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/joserodriguezthe1/AI-Security-Training-Platform" class="project-link"
+              target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">History</div>
+        <h2><span class="accent">Experience</span></h2>
+      </div>
+      <div class="exp-timeline">
+
+        <div class="exp-item current reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Cybersecurity Supervisor</div>
+                <div class="exp-org">COLSA Corporation — Orlando, FL</div>
+              </div>
+              <div class="exp-period">Jul 2021 — Sep 2025</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Supervised <strong>18 personnel</strong> — 5 Security Control Assessors, 2 Information Security
+                Managers, and 11 ISSOs — across multiple programs supporting Army and DoD systems.</li>
+              <li>Directed RMF lifecycle execution and compliance reviews for enclaves and mission-critical
+                applications; conducted pre/post-assessment teleconferences leading to <strong>consecutive ATO
+                  approvals</strong>.</li>
+              <li>Led end-to-end QA reviews of all RMF artifacts within eMASS prior to AO review, ensuring compliance,
+                accuracy, and audit readiness across multiple DoD authorization packages.</li>
+              <li>Annotated assessment procedure (AP) test results in eMASS and produced final SARs and RARs
+                supporting ATO decisions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Senior Cybersecurity Analyst</div>
+                <div class="exp-org">ECS — Orlando, FL</div>
+              </div>
+              <div class="exp-period">Feb 2021 — Apr 2021</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Conducted Security Control Assessments leading to a <strong>3-year ATO</strong>; drafted POA&Ms with
+                technical mitigation strategies and milestones.</li>
+              <li>Ran and analyzed ACAS scans, uploaded test results into eMASS, and coordinated remediation with
+                engineers; provided STIG and SDLC security guidance.</li>
+              <li>Authored Information Security Plans, Configuration Management Plans, Incident Response Plans, and
+                Contingency Plans; supported penetration testing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Information System Security Officer (ISSO)</div>
+                <div class="exp-org">Naval Air Warfare Training Systems Division (NAWCTSD)</div>
+              </div>
+              <div class="exp-period">Jul 2020 — Feb 2021</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed and maintained RMF A&A packages for IDEA program systems, ensuring authorization readiness
+                and continuous compliance.</li>
+              <li>Managed continuous monitoring strategies, vulnerability reporting in VRAM, and authorization status
+                tracking across multiple training systems.</li>
+              <li>Utilized ACAS, SCAP Compliance Checker, and Vulnerator for system scans and security posture
+                reporting; oversaw eMASS documentation and artifact integrity.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">ISSO / IT Specialist (INFOSEC)</div>
+                <div class="exp-org">Naval Medical Center Camp Lejeune — NC</div>
+              </div>
+              <div class="exp-period">Jul 2018 — Jul 2020</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Led cybersecurity governance, risk management, and compliance for classified and unclassified
+                defense programs; served as <strong>primary cybersecurity advisor</strong> to program managers, system
+                owners, and senior leadership.</li>
+              <li>Oversaw development of SSPs, SARs, POA&Ms, and executive cybersecurity briefings; coordinated
+                incident response and corrective action planning; assisted RMF Program Manager in maintaining network
+                C&A.</li>
+              <li>Operated ACAS for enterprise vulnerability management; managed HBSS product outages and STIG-aligned
+                patching across the network.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Information Security Analyst & Sys Admin</div>
+                <div class="exp-org">Naval Medical Center Camp Lejeune — NC</div>
+              </div>
+              <div class="exp-period">Jul 2016 — Jul 2018</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Implemented cybersecurity controls protecting <strong>2,000+ end users</strong> across clinical and
+                administrative systems handling sensitive healthcare data; administered Windows servers, workstations,
+                and networked systems.</li>
+              <li>Managed account provisioning, RBAC, and deactivation to enforce least privilege; reported and
+                tracked NTDs, CTOs, and IAVAs in OCRS while maintaining HIPAA compliance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Aircraft Maintenance Admin Specialist</div>
+                <div class="exp-org">U.S. Marine Corps — New River, NC</div>
+              </div>
+              <div class="exp-period">Apr 2007 — Apr 2011</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Maintained OOMA NALCOMIS accounts, privileges, and security for <strong>100+ maintenance
+                  personnel</strong>; managed backup/recovery and equipment inventory.</li>
+              <li>Earliest hands-on experience with access management, system administration, and information
+                security in a high-tempo operational environment.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CURRENT FOCUS ─── -->
+  <section id="focus">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Now</div>
+        <h2>Currently <span class="accent">Building</span></h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card reveal">
+          <div class="focus-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <h3>AWS Cloud Security</h3>
+          <p>Building cloud-native security automation on AWS — IAM policy governance, Security Hub integrations, and
+            compliance-as-code pipelines for FedRAMP workloads.</p>
+        </div>
+        <div class="focus-card reveal reveal-delay-1">
+          <div class="focus-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3>OSCAL & FedRAMP</h3>
+          <p>Deepening FedRAMP High and Moderate authorization expertise — OSCAL document family generation, 3PAO
+            assessment processes, and continuous monitoring at scale.</p>
+        </div>
+        <div class="focus-card reveal reveal-delay-2">
+          <div class="focus-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3>AI Governance & NIST AI RMF</h3>
+          <p>Exploring AI/ML security governance under NIST AI RMF 1.0 — mapping traditional cybersecurity controls to
+            emerging AI system threat models and compliance requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-inner">
+          <div class="contact-intro reveal">
+            <div class="section-header" style="margin-bottom:1.5rem;">
+              <div class="section-eyebrow">Get In Touch</div>
+              <h2>Let's<br><span class="accent">Connect</span></h2>
+            </div>
+            <p>Open to cybersecurity roles in <strong style="color:var(--text)">GRC engineering, cloud security, and
+                federal or defense environments</strong>. TS clearance — eligible for reactivation. Available for
+              immediate consideration.</p>
+            <p style="margin-top:0.75rem;">Whether you're looking for a senior GRC engineer, a cloud security
+              architect with federal experience, or a cybersecurity program lead — let's talk.</p>
+            <div style="margin-top:2rem;">
+              <a href="mailto:jarodriguez1836@gmail.com" class="btn btn-primary">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Send Email
+              </a>
+            </div>
+          </div>
+          <div class="contact-links reveal reveal-delay-2">
+            <a href="https://www.linkedin.com/in/jose-rodriguez-01097233/" target="_blank" rel="noopener"
+              class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div class="contact-link-body">
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-val">linkedin.com/in/jose-rodriguez-01097233</div>
+              </div>
+              <div class="contact-link-arrow">›</div>
+            </a>
+            <a href="mailto:jarodriguez1836@gmail.com" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="contact-link-body">
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-val">jarodriguez1836@gmail.com</div>
+              </div>
+              <div class="contact-link-arrow">›</div>
+            </a>
+            <a href="https://github.com/joserodriguezthe1" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </div>
+              <div class="contact-link-body">
+                <div class="contact-link-label">GitHub</div>
+                <div class="contact-link-val">github.com/joserodriguezthe1</div>
+              </div>
+              <div class="contact-link-arrow">›</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <span>© 2026 Jose Rodriguez. All rights reserved.</span>
+    <span>Senior Cybersecurity · RMF & GRC Engineering · Cloud Security</span>
+    <a href="#hero">Back to top ↑</a>
+  </footer>
+
+  <script>
+    // ─── SCROLL REVEAL ───
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ─── MOBILE NAV ───
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // ─── ACTIVE NAV ON SCROLL ───
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-badge)');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.style.color = '';
+        link.style.background = '';
+        if (link.getAttribute('href') === '#' + current) {
+          link.style.color = 'var(--text)';
+          link.style.background = 'var(--accent-dim)';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
